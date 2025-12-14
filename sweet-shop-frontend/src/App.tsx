@@ -3,11 +3,25 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+
+// Inside return:
+<div className="min-h-screen bg-gray-50 flex flex-col">
+  <Header />
+  <main className="flex-1">
+    <Routes>
+      {/* ... your routes */}
+    </Routes>
+  </main>
+  <Footer />
+</div>
+
 import { Login } from './components/auth/Login';
 import { Register } from './components/auth/Register';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +33,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
             <Route
               path="/admin"
               element={
