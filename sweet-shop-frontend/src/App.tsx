@@ -1,34 +1,38 @@
+// src/App.tsx
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { Header } from './components/layout/Header';
+import { Login } from './components/auth/Login';
+import { Register } from './components/auth/Register';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
+import { HomePage } from './pages/HomePage';
+import { AdminPage } from './pages/AdminPage';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            🍬 Sweet Shop Management System
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Frontend setup complete! Ready to build amazing features.
-          </p>
-          <div className="mt-8 p-6 bg-white rounded-xl shadow-lg max-w-md mx-auto">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
-              Setup Checklist ✅
-            </h2>
-            <ul className="text-left space-y-2 text-gray-700">
-              <li>✅ React with TypeScript</li>
-              <li>✅ Tailwind CSS configured</li>
-              <li>✅ Axios for API calls</li>
-              <li>✅ React Router installed</li>
-              <li>✅ Testing libraries ready</li>
-              <li>✅ Project structure created</li>
-            </ul>
-          </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <div className="min-h-screen bg-gray-50">
+          <Header />
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </div>
-      </div>
-    </div>
+      </AuthProvider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
