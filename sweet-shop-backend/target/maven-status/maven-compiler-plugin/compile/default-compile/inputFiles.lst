@@ -1,2 +1,9 @@
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\dto\AuthResponse.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\repository\UserRepository.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\service\AuthService.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\model\Role.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\model\User.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\SweetShopApplication.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\config\BeanConfig.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\dto\RegisterRequest.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\repository\TestRepository.java

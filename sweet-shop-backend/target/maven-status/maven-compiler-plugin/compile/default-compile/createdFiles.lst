@@ -1,2 +1,11 @@
-com\sweetshop\SweetShopApplication.class
+com\sweetshop\config\BeanConfig.class
+com\sweetshop\dto\AuthResponse$AuthResponseBuilder.class
+com\sweetshop\dto\AuthResponse.class
+com\sweetshop\repository\UserRepository.class
+com\sweetshop\model\Role.class
+com\sweetshop\repository\TestRepository.class
 com\sweetshop\model\User.class
+com\sweetshop\SweetShopApplication.class
+com\sweetshop\service\AuthService.class
+com\sweetshop\dto\RegisterRequest.class
+com\sweetshop\model\User$UserBuilder.class
