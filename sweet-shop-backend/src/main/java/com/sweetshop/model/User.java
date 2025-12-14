@@ -1,12 +1,15 @@
 package com.sweetshop.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-@Data
+@Data  // THIS IS CRITICAL - generates getUsername(), getEmail(), getRole()
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

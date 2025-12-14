@@ -1,9 +1,12 @@
 package com.sweetshop.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+@Builder  // THIS IS CRITICAL - generates builder()
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthResponse {
