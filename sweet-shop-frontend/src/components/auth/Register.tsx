@@ -42,10 +42,17 @@ export const Register: React.FC = () => {
     try {
       const { username, email, password } = formData;
       const response = await authService.register({ username, email, password });
-      login(response.username, response.email, response.role);
-      navigate('/');
+      
+      if (response.token) {
+        login(response.username, response.email, response.role);
+        navigate('/');
+      } else {
+        setError('Registration successful but no token received. Please login.');
+        navigate('/login');
+      }
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+      console.error('Registration error:', err);
+      setError(err.response?.data?.message || err.message || 'Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }

@@ -25,31 +25,38 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider tokenProvider;
     
-    @Transactional
-    public AuthResponse register(RegisterRequest request) {
-        if (userRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("Username exists");
-        }
-        if (userRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("Email exists");
-        }
-        
-        User user = User.builder()
-                .username(request.getUsername())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
-                .build();
-        
-        userRepository.save(user);
-        
-        return AuthResponse.builder()
-                .username(user.getUsername())
-                .email(user.getEmail())
-                .role(user.getRole().name())
-                .build();
+@Transactional
+public AuthResponse register(RegisterRequest request) {
+    if (userRepository.existsByUsername(request.getUsername())) {
+        throw new RuntimeException("Username exists");
+    }
+    if (userRepository.existsByEmail(request.getEmail())) {
+        throw new RuntimeException("Email exists");
     }
     
+    User user = User.builder()
+            .username(request.getUsername())
+            .email(request.getEmail())
+            .password(passwordEncoder.encode(request.getPassword()))
+            .role(Role.USER)
+            .build();
+    
+    userRepository.save(user);
+    
+    // Add token generation like in login
+    Authentication authentication = authenticationManager.authenticate(
+        new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+    );
+    String token = tokenProvider.generateToken(authentication);
+    
+    return AuthResponse.builder()
+            .token(token)
+            .username(user.getUsername())
+            .email(user.getEmail())
+            .role(user.getRole().name())
+            .build();
+}
+
     public AuthResponse login(LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())

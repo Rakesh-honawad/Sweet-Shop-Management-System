@@ -1,0 +1,4 @@
+com\sweetshop\security\Authentication.class
+com\sweetshop\repository\UserRepositoryTest.class
+com\sweetshop\service\AuthServiceTest.class
+com\sweetshop\security\JwtTokenProvider.class

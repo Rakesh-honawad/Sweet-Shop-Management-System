@@ -1,134 +1,138 @@
 // src/pages/AdminPage.tsx
-import React, { useState, useEffect } from 'react';
-import { SweetForm } from '../components/sweets/SweetForm';
-import { SweetCard } from '../components/sweets/SweetCard';
+import React, { useEffect, useState } from 'react';
 import { sweetService } from '../services/sweetService';
-import { Sweet, SweetFormData } from '../types';
+import { Sweet } from '../types';
+import { SweetForm } from '../components/sweets/SweetForm';
+import { SweetList } from '../components/sweets/SweetList';
 
 export const AdminPage: React.FC = () => {
   const [sweets, setSweets] = useState<Sweet[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false);
-  const [editingSweet, setEditingSweet] = useState<Sweet | undefined>();
-
-  const loadSweets = async () => {
-    try {
-      setLoading(true);
-      const data = await sweetService.getAllSweets();
-      setSweets(data);
-    } catch (error) {
-      alert('Failed to load sweets');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [error, setError] = useState('');
+  const [editingSweet, setEditingSweet] = useState<Sweet | undefined>(undefined);
 
   useEffect(() => {
     loadSweets();
   }, []);
 
-  const handleSubmit = async (formData: SweetFormData) => {
+  const loadSweets = async () => {
     try {
-      const sweetData = {
-        name: formData.name,
-        category: formData.category,
-        price: parseFloat(formData.price),
-        quantity: parseInt(formData.quantity),
-        description: formData.description,
-        imageUrl: formData.imageUrl
-      };
-
-      if (editingSweet) {
-        await sweetService.updateSweet(editingSweet.id, sweetData);
-        alert('Sweet updated successfully!');
-      } else {
-        await sweetService.createSweet(sweetData);
-        alert('Sweet added successfully!');
-      }
-
-      setShowForm(false);
-      setEditingSweet(undefined);
-      loadSweets();
-    } catch (error: any) {
-      alert(error.response?.data?.message || 'Operation failed');
+      setLoading(true);
+      const data = await sweetService.getAllSweets();
+      setSweets(data || []);
+    } catch (err: any) {
+      console.error('Error loading sweets:', err);
+      setError('Failed to load sweets');
+      setSweets([]);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleEdit = (sweet: Sweet) => {
-    setEditingSweet(sweet);
-    setShowForm(true);
+  const handleAddSweet = async (sweetData: any) => {
+    try {
+      const payload = {
+        name: sweetData.name,
+        description: sweetData.description,
+        price: Number(sweetData.price),
+        imageUrl: sweetData.imageUrl,
+        category: sweetData.category,
+        stock: Number(sweetData.stock)
+      };
+      await sweetService.createSweet(payload);
+      await loadSweets();
+      alert('Sweet added successfully!');
+    } catch (err: any) {
+      alert(err.response?.data?.message || 'Failed to add sweet');
+    }
   };
 
-  const handleCancel = () => {
-    setShowForm(false);
-    setEditingSweet(undefined);
+  const handleUpdateSweet = async (id: number, sweetData: any) => {
+    try {
+      const payload = {
+        name: sweetData.name,
+        description: sweetData.description,
+        price: Number(sweetData.price),
+        imageUrl: sweetData.imageUrl,
+        category: sweetData.category,
+        stock: Number(sweetData.stock)
+      };
+      await sweetService.updateSweet(id, payload);
+      await loadSweets();
+      setEditingSweet(undefined);
+      alert('Sweet updated successfully!');
+    } catch (err: any) {
+      alert(err.response?.data?.message || 'Failed to update sweet');
+    }
   };
 
-  const handleRestock = async (sweetId: number) => {
-    const quantityStr = prompt('Enter quantity to add:');
-    if (!quantityStr) return;
-
-    const quantity = parseInt(quantityStr);
-    if (isNaN(quantity) || quantity <= 0) {
-      alert('Invalid quantity');
+  const handleDeleteSweet = async (id: number) => {
+    if (!window.confirm('Are you sure you want to delete this sweet?')) {
       return;
     }
-
     try {
-      await sweetService.restockSweet(sweetId, { quantity });
-      alert('Restocked successfully!');
-      loadSweets();
-    } catch (error) {
-      alert('Restock failed');
+      await sweetService.deleteSweet(id);
+      await loadSweets();
+      alert('Sweet deleted successfully!');
+    } catch (err: any) {
+      alert(err.response?.data?.message || 'Failed to delete sweet');
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-gray-800">Admin Panel</h1>
-            <p className="text-gray-600 mt-2">Manage your sweet inventory</p>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 py-8">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold text-gray-800 mb-8">
+          🍬 Admin Panel - Manage Sweets
+        </h1>
+
+        {error && (
+          <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+            {error}
           </div>
-          
-          {!showForm && (
-            <button onClick={() => setShowForm(true)} className="btn-primary">
-              Add New Sweet
-            </button>
-          )}
+        )}
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h2 className="text-xl font-bold mb-4">
+                {editingSweet ? 'Edit Sweet' : 'Add New Sweet'}
+              </h2>
+              <SweetForm
+                sweet={editingSweet}
+                onSubmit={async (data) => {
+                  if (editingSweet) {
+                    await handleUpdateSweet(editingSweet.id, data);
+                  } else {
+                    await handleAddSweet(data);
+                  }
+                }}
+                onCancel={() => setEditingSweet(undefined)}
+              />
+            </div>
+          </div>
+
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h2 className="text-xl font-bold mb-4">
+                Existing Sweets ({sweets.length})
+              </h2>
+              <SweetList
+                sweets={sweets}
+                onEdit={setEditingSweet}
+                onDelete={handleDeleteSweet}
+              />
+            </div>
+          </div>
         </div>
-
-        {showForm && (
-          <div className="mb-8">
-            <SweetForm
-              sweet={editingSweet}
-              onSubmit={handleSubmit}
-              onCancel={handleCancel}
-            />
-          </div>
-        )}
-
-        {loading ? (
-          <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-            <p className="mt-4 text-gray-600">Loading sweets...</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {sweets.map((sweet) => (
-              <div key={sweet.id} className="relative">
-                <SweetCard sweet={sweet} onUpdate={loadSweets} onEdit={handleEdit} />
-                <button
-                  onClick={() => handleRestock(sweet.id)}
-                  className="absolute top-2 right-2 bg-green-600 text-white px-3 py-1 rounded-lg text-sm hover:bg-green-700"
-                >
-                  Restock
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
