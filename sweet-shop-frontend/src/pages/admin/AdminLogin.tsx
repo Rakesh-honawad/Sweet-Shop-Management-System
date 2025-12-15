@@ -26,13 +26,15 @@ export const AdminLogin: React.FC = () => {
     try {
       const response = await authService.login(formData);
       
+      // Check if admin
       if (response.role !== 'ADMIN') {
-        setError('❌ Admin access required.');
+        setError('❌ Admin access required. You are not an admin.');
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         return;
       }
 
+      // Save admin credentials
       localStorage.setItem('token', response.token);
       localStorage.setItem('user', JSON.stringify({
         username: response.username,
@@ -40,9 +42,10 @@ export const AdminLogin: React.FC = () => {
         role: response.role
       }));
 
-      navigate('/admin');
+      // Navigate to admin page (check your routes - might be /admin or /admin/dashboard)
+      navigate('/admin');  // ✅ Change this to match your admin route in App.tsx
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Login failed');
+      setError(err.response?.data?.message || 'Login failed. Check credentials.');
     } finally {
       setLoading(false);
     }
