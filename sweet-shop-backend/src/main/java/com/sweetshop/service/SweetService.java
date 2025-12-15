@@ -24,26 +24,28 @@ public class SweetService {
                 .collect(Collectors.toList());
     }
     
-    public SweetDTO createSweet(SweetDTO dto) {
-        Sweet sweet = Sweet.builder()
-                .name(dto.getName())
-                .category(dto.getCategory())
-                .price(BigDecimal.valueOf(dto.getPrice()))
-                .quantity(dto.getQuantity())
-                .build();
-        return convertToDTO(sweetRepository.save(sweet));
-    }
+public SweetDTO createSweet(SweetDTO dto) {
+    Sweet sweet = Sweet.builder()
+            .name(dto.getName())
+            .description(dto.getDescription())
+            .category(dto.getCategory())
+            .price(dto.getPrice().doubleValue())
+            .imageUrl(dto.getImageUrl())
+            .stock(dto.getQuantity())  // Map quantity to stock
+            .build();
+    return convertToDTO(sweetRepository.save(sweet));
+}
     
     @Transactional
     public SweetDTO purchaseSweet(Long id, PurchaseRequest request) {
         Sweet sweet = sweetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Sweet not found"));
         
-        if (sweet.getQuantity() < request.getQuantity()) {
-            throw new RuntimeException("Insufficient quantity");
+        if (sweet.getStock() < request.getQuantity()) {
+            throw new RuntimeException("Insufficient stock");
         }
         
-        sweet.setQuantity(sweet.getQuantity() - request.getQuantity());
+        sweet.setStock(sweet.getStock() - request.getQuantity());
         return convertToDTO(sweetRepository.save(sweet));
     }
     
@@ -51,20 +53,22 @@ public class SweetService {
     public SweetDTO restockSweet(Long id, Integer quantity) {
         Sweet sweet = sweetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Sweet not found"));
-        sweet.setQuantity(sweet.getQuantity() + quantity);
+        sweet.setStock(sweet.getStock() + quantity);
         return convertToDTO(sweetRepository.save(sweet));
     }
     
-    @Transactional
-    public SweetDTO updateSweet(Long id, SweetDTO dto) {
-        Sweet sweet = sweetRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Sweet not found"));
-        sweet.setName(dto.getName());
-        sweet.setCategory(dto.getCategory());
-        sweet.setPrice(BigDecimal.valueOf(dto.getPrice()));
-        sweet.setQuantity(dto.getQuantity());
-        return convertToDTO(sweetRepository.save(sweet));
-    }
+@Transactional
+public SweetDTO updateSweet(Long id, SweetDTO dto) {
+    Sweet sweet = sweetRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Sweet not found"));
+    sweet.setName(dto.getName());
+    sweet.setDescription(dto.getDescription());
+    sweet.setCategory(dto.getCategory());
+    sweet.setPrice(dto.getPrice().doubleValue());
+    sweet.setImageUrl(dto.getImageUrl());
+    sweet.setStock(dto.getQuantity());  // Map quantity to stock
+    return convertToDTO(sweetRepository.save(sweet));
+}
     
     public void deleteSweet(Long id) {
         sweetRepository.deleteById(id);
@@ -80,13 +84,15 @@ public class SweetService {
                 .collect(Collectors.toList());
     }
     
-    private SweetDTO convertToDTO(Sweet sweet) {
-        return SweetDTO.builder()
-                .id(sweet.getId())
-                .name(sweet.getName())
-                .category(sweet.getCategory())
-                .price(sweet.getPrice().doubleValue())
-                .quantity(sweet.getQuantity())
-                .build();
-    }
+private SweetDTO convertToDTO(Sweet sweet) {
+    return SweetDTO.builder()
+            .id(sweet.getId())
+            .name(sweet.getName())
+            .description(sweet.getDescription())
+            .price(sweet.getPrice().doubleValue())
+            .imageUrl(sweet.getImageUrl())
+            .category(sweet.getCategory())
+            .quantity(sweet.getStock())  // Map stock to quantity
+            .build();
+}
 }

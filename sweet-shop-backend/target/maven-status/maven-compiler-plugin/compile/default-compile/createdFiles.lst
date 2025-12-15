@@ -1,9 +1,11 @@
+com\sweetshop\security\JwtAuthenticationEntryPoint.class
 com\sweetshop\config\SecurityConfig.class
 com\sweetshop\repository\SweetRepository.class
 com\sweetshop\repository\UserRepository.class
 com\sweetshop\model\Sweet$SweetBuilder.class
 com\sweetshop\model\User.class
 com\sweetshop\service\AuthService.class
+com\sweetshop\dto\AuthRequest.class
 com\sweetshop\model\User$UserBuilder.class
 com\sweetshop\dto\SweetDTO.class
 com\sweetshop\dto\AuthResponse$AuthResponseBuilder.class

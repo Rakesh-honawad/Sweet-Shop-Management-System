@@ -1,3 +1,5 @@
+// src/types/index.ts
+
 export interface Sweet {
   id: number;
   name: string;
@@ -9,16 +11,33 @@ export interface Sweet {
 }
 
 export interface User {
+  id: number;
   username: string;
   email: string;
-  role: 'USER' | 'ADMIN';
+  role: string;
 }
 
-export interface SweetFormData {
-  name: string;
-  description: string;
-  price: string;
-  imageUrl: string;
-  category: string;
-  stock: string;
+export interface AuthResponse {
+  token: string;
+  username: string;
+  email: string;
+  role: string;
+}
+
+export interface LoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface RegisterRequest {
+  username: string;
+  email: string;
+  password: string;
+}
+
+export interface SearchFilters {
+  name?: string;
+  category?: string;
+  minPrice?: number;
+  maxPrice?: number;
 }

@@ -3,26 +3,28 @@ package com.sweetshop.controller;
 import com.sweetshop.dto.PurchaseRequest;
 import com.sweetshop.dto.SweetDTO;
 import com.sweetshop.service.SweetService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/sweets")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class SweetController {
     
     private final SweetService sweetService;
     
     @GetMapping
-    public ResponseEntity<?> getAll() {
+    public ResponseEntity<List<SweetDTO>> getAllSweets() {
         return ResponseEntity.ok(sweetService.getAllSweets());
     }
     
     @GetMapping("/search")
-    public ResponseEntity<?> search(
+    public ResponseEntity<List<SweetDTO>> searchSweets(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String category,
             @RequestParam(required = false) Double minPrice,
@@ -32,31 +34,35 @@ public class SweetController {
     
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> create(@Valid @RequestBody SweetDTO dto) {
-        return ResponseEntity.ok(sweetService.createSweet(dto));
+    public ResponseEntity<SweetDTO> createSweet(@RequestBody SweetDTO sweetDTO) {
+        return ResponseEntity.ok(sweetService.createSweet(sweetDTO));
     }
     
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@PathVariable Long id, @Valid @RequestBody SweetDTO dto) {
-        return ResponseEntity.ok(sweetService.updateSweet(id, dto));
+    public ResponseEntity<SweetDTO> updateSweet(@PathVariable Long id, @RequestBody SweetDTO sweetDTO) {
+        return ResponseEntity.ok(sweetService.updateSweet(id, sweetDTO));
     }
     
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteSweet(@PathVariable Long id) {
         sweetService.deleteSweet(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
     
     @PostMapping("/{id}/purchase")
-    public ResponseEntity<?> purchase(@PathVariable Long id, @Valid @RequestBody PurchaseRequest request) {
+    public ResponseEntity<SweetDTO> purchaseSweet(
+            @PathVariable Long id,
+            @RequestBody PurchaseRequest request) {
         return ResponseEntity.ok(sweetService.purchaseSweet(id, request));
     }
     
     @PostMapping("/{id}/restock")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> restock(@PathVariable Long id, @RequestBody PurchaseRequest request) {
-        return ResponseEntity.ok(sweetService.restockSweet(id, request.getQuantity()));
+    public ResponseEntity<SweetDTO> restockSweet(
+            @PathVariable Long id,
+            @RequestParam Integer quantity) {
+        return ResponseEntity.ok(sweetService.restockSweet(id, quantity));
     }
 }

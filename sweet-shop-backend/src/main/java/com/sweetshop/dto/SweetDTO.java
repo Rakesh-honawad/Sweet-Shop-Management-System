@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 public class SweetDTO {
     private Long id;
     private String name;
-    private String category;
+    private String description;
     private Double price;
-    private Integer quantity;
+    private String imageUrl;
+    private String category;
+    private Integer quantity;  // CHANGED from stock to quantity
 }

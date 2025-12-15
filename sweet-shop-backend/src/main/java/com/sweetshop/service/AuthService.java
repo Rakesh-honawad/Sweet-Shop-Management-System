@@ -38,7 +38,8 @@ public AuthResponse register(RegisterRequest request) {
             .username(request.getUsername())
             .email(request.getEmail())
             .password(passwordEncoder.encode(request.getPassword()))
-            .role(Role.USER)
+            .role("USER")
+
             .build();
     
     userRepository.save(user);
@@ -53,7 +54,7 @@ public AuthResponse register(RegisterRequest request) {
             .token(token)
             .username(user.getUsername())
             .email(user.getEmail())
-            .role(user.getRole().name())
+            .role(user.getRole())
             .build();
 }
 
@@ -71,7 +72,7 @@ public AuthResponse register(RegisterRequest request) {
                 .token(token)
                 .username(user.getUsername())
                 .email(user.getEmail())
-                .role(user.getRole().name())
+                .role(user.getRole())
                 .build();
     }
 }

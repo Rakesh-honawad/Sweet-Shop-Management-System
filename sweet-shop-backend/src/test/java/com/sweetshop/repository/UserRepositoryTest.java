@@ -29,7 +29,7 @@ class UserRepositoryTest {
                 .username("testuser")
                 .email("test@example.com")
                 .password("password")
-                .role(Role.USER)
+                .role("USER")
                 .build();
 
         entityManager.persistAndFlush(user);

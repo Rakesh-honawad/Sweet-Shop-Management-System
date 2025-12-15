@@ -1,19 +1,14 @@
 import api from './api';
+import { AuthResponse, LoginRequest, RegisterRequest } from '../types';
 
 export const authService = {
-  register: async (userData: { username: string; email: string; password: string }) => {
-    const response = await api.post('/auth/register', userData);
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-    }
-    return response.data; // Return the whole response.data object
+  login: async (data: LoginRequest): Promise<AuthResponse> => {
+    const response = await api.post('/auth/login', data);
+    return response.data;
   },
 
-  login: async (credentials: { username: string; password: string }) => {
-    const response = await api.post('/auth/login', credentials);
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-    }
+  register: async (data: RegisterRequest): Promise<AuthResponse> => {
+    const response = await api.post('/auth/register', data);
     return response.data;
   },
 
@@ -25,5 +20,14 @@ export const authService = {
   getCurrentUser: () => {
     const userStr = localStorage.getItem('user');
     return userStr ? JSON.parse(userStr) : null;
+  },
+
+  isAuthenticated: () => {
+    return !!localStorage.getItem('token');
+  },
+
+  isAdmin: () => {
+    const user = authService.getCurrentUser();
+    return user?.role === 'ADMIN';
   }
 };
