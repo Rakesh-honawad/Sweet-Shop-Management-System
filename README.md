@@ -109,8 +109,8 @@
 > **Note:** Add screenshots or GIF demos of your application here
 
 ```
-🚀 Live Demo: [Coming Soon]
-📱 Screenshots: [Add your screenshots here]
+🚀 Live Demo: https://sweet-shop-management-system-khaki.vercel.app/
+📱 Screenshots: [soon]
 ```
 
 ---
