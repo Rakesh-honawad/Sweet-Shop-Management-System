@@ -32,6 +32,7 @@
 
 ---
 
+### LIVE - https://sweet-shop-management-system-khaki.vercel.app/
 ## ✨ Features
 
 ### 👥 Customer Features
