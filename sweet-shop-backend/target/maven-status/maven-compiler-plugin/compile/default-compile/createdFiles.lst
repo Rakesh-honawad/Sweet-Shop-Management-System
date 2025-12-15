@@ -25,5 +25,4 @@ com\sweetshop\dto\RegisterRequest.class
 com\sweetshop\controller\AuthController.class
 com\sweetshop\security\JwtTokenProvider.class
 com\sweetshop\dto\AuthResponse.class
-com\sweetshop\SweetShopApplication.class
 com\sweetshop\dto\PurchaseRequest.class

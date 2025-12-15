@@ -10,6 +10,8 @@ import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AdminLogin } from './pages/admin/AdminLogin'; // ✅ ADD THIS LINE
+
 
 const App: React.FC = () => {
   return (
@@ -21,6 +23,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/admin/login" element={<AdminLogin />} /> {/* ✅ ADD THIS LINE */}
               <Route path="/" element={<HomePage />} />
               <Route
                 path="/admin"
@@ -39,5 +42,6 @@ const App: React.FC = () => {
     </BrowserRouter>
   );
 };
+
 
 export default App;
