@@ -1,3 +1,2 @@
 com\sweetshop\security\Authentication.class
 com\sweetshop\service\AuthServiceTest.class
-com\sweetshop\repository\UserRepositoryTest.class

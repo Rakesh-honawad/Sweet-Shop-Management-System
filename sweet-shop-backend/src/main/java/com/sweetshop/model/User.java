@@ -1,30 +1,28 @@
 package com.sweetshop.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.index.Indexed;
 
-@Entity
-@Table(name = "users")
+@Document(collection = "users")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     
-    @Column(unique = true, nullable = false)
+    @Indexed(unique = true)
     private String username;
     
-    @Column(unique = true, nullable = false)
+    @Indexed(unique = true)
     private String email;
     
-    @Column(nullable = false)
     private String password;
-    
     private String role;
 }

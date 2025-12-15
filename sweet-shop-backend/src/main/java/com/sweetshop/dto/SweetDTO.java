@@ -5,16 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class SweetDTO {
-    private Long id;
+    private String id;  // Changed from Long
     private String name;
     private String description;
-    private Double price;
-    private String imageUrl;
     private String category;
-    private Integer quantity;  // CHANGED from stock to quantity
+    private BigDecimal price;  // Changed from Double
+    private String imageUrl;
+    private Integer quantity;
 }

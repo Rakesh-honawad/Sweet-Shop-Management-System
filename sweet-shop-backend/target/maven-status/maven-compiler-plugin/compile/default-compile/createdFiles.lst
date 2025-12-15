@@ -18,6 +18,7 @@ com\sweetshop\config\BeanConfig.class
 com\sweetshop\model\Sweet.class
 com\sweetshop\service\tokenProvider.class
 com\sweetshop\dto\LoginRequest.class
+com\sweetshop\config\DataInitializer.class
 com\sweetshop\security\JwtAuthenticationFilter.class
 com\sweetshop\service\SweetService.class
 com\sweetshop\dto\RegisterRequest.class

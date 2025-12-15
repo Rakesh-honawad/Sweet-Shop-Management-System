@@ -8,5 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PurchaseRequest {
+    private String sweetId;  // Changed from Long
     private Integer quantity;
 }

@@ -13,6 +13,7 @@ G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\service\SweetService
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\security\JwtAuthenticationFilter.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\controller\SweetController.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\service\tokenProvider.java
+G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\config\DataInitializer.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\model\User.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\service\UserDetailsServiceImpl.java
 G:\sweetshop\sweet-shop-backend\src\main\java\com\sweetshop\dto\AuthResponse.java

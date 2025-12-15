@@ -1,26 +1,27 @@
 package com.sweetshop.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "sweets")
+import java.math.BigDecimal;
+
+@Document(collection = "sweets")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Sweet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     
     private String name;
     private String description;
     private String category;
-    private Double price;
+    private BigDecimal price;  // ✅ Make sure this is BigDecimal, NOT Double
     private String imageUrl;
     private Integer stock;
 }
