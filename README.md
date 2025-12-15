@@ -1,17 +1,16 @@
+# 🍬 Sweet Shop - E-Commerce Platform
+
 <div align="center">
 
-# 🍬 Sweet Shop
+**Full-Stack E-Commerce Solution for Traditional Indian Sweets**
 
-### Full-Stack E-Commerce Platform for Traditional Indian Sweets
-
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/sweet-shop)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![React](https://img.shields.io/badge/React-18.2.0-61dafb.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-7.0-green.svg)](https://www.mongodb.com/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://sweet-shop-management-system-khaki.vercel.app/)
+[![Backend](https://img.shields.io/badge/backend-Spring%20Boot-green)](https://sweet-shop-management-system-6n23.onrender.com/api/sweets)
+[![Frontend](https://img.shields.io/badge/frontend-React-blue)](https://sweet-shop-management-system-khaki.vercel.app/)
+[![Database](https://img.shields.io/badge/database-MongoDB-brightgreen)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Features](#-features) • [Demo](#-demo) • [Installation](#-quick-start) • [Documentation](#-api-documentation) • [Contributing](#-contributing)
+[🌐 Live Demo](#-live-demo) • [✨ Features](#-features) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-api-documentation) • [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -19,447 +18,287 @@
 
 ## 📖 Overview
 
-**Sweet Shop** is a modern, production-ready e-commerce application designed specifically for managing and selling traditional Indian sweets online. Built with enterprise-grade technologies, it offers a seamless shopping experience for customers and powerful management tools for administrators.
+Sweet Shop is a modern, production-ready e-commerce platform built for managing and selling traditional Indian sweets online. Designed with enterprise-grade architecture, it provides a seamless shopping experience for customers and comprehensive management tools for administrators.
 
 ### 🎯 Key Highlights
 
-- **Secure Authentication** - JWT-based authentication with role-based access control
-- **Real-time Inventory** - Live stock management and updates
-- **Responsive Design** - Mobile-first design with Tailwind CSS
-- **RESTful API** - Well-documented API endpoints
-- **Type-Safe** - Full TypeScript implementation on frontend
-- **Scalable Architecture** - Microservices-ready architecture with Spring Boot
+- ✅ **JWT-Based Security** - Secure authentication with role-based access control (Admin/User)
+- ✅ **Real-Time Inventory** - Live stock management and product availability tracking
+- ✅ **Responsive Design** - Mobile-first UI with Tailwind CSS, works on all devices
+- ✅ **Type-Safe Code** - Full TypeScript implementation across frontend
+- ✅ **RESTful API** - Well-documented, production-ready API endpoints
+- ✅ **Cloud Ready** - Deployed on Vercel (Frontend), Render (Backend), MongoDB Atlas (Database)
 
 ---
 
-### LIVE - https://sweet-shop-management-system-khaki.vercel.app/
+## 🌐 Live Demo
+
+| Platform | URL | Status |
+|----------|-----|--------|
+| 🎨 **Frontend** | [https://sweet-shop-management-system-khaki.vercel.app/](https://sweet-shop-management-system-khaki.vercel.app/) | ✅ Live |
+| 🔌 **Backend API** | [https://sweet-shop-management-system-6n23.onrender.com/api/sweets](https://sweet-shop-management-system-6n23.onrender.com/api/sweets) | ✅ Live |
+
+**Test Account:**
+```
+Username: admin
+Password: admin123
+```
+
+---
+
 ## ✨ Features
 
 ### 👥 Customer Features
 
-| Feature | Description |
-|---------|-------------|
-| 🛍️ **Product Catalog** | Browse extensive collection of traditional Indian sweets with high-quality images |
-| 🔍 **Smart Search** | Advanced search and filtering by category, price, and availability |
-| 🛒 **Shopping Cart** | Intuitive cart management with real-time price calculations |
-| 💳 **Secure Checkout** | Safe and streamlined checkout process |
-| 👤 **User Profiles** | Personalized user accounts with order history |
-| 📦 **Order Tracking** | Real-time order status and history tracking |
-| 📱 **Responsive UI** | Seamless experience across all devices |
+| Feature | Details |
+|---------|---------|
+| 🛍️ **Browse Catalog** | View extensive collection of traditional Indian sweets with high-quality images |
+| 🔍 **Smart Search** | Filter sweets by category, price range, and availability |
+| 🛒 **Shopping Cart** | Add/remove items, update quantities, see real-time price calculations |
+| 💳 **Secure Checkout** | Safe order placement with delivery address management |
+| 👤 **User Account** | Create profile, view order history, track deliveries |
+| 📦 **Order Tracking** | Real-time status updates on orders |
+| 📱 **Mobile Friendly** | Fully responsive design for all devices |
 
 ### 🔐 Admin Features
 
-| Feature | Description |
-|---------|-------------|
-| 📊 **Dashboard Analytics** | Comprehensive overview of sales, orders, and inventory |
-| ➕ **Product Management** | Full CRUD operations for sweet products |
-| 📋 **Inventory Control** | Real-time stock tracking and low-stock alerts |
-| 👥 **User Management** | Manage customer accounts and permissions |
-| 📈 **Order Management** | Process, track, and manage all customer orders |
-| 🔐 **Access Control** | Role-based permissions (Admin/User) |
-| 📑 **Reports** | Generate sales and inventory reports |
+| Feature | Details |
+|---------|---------|
+| 📊 **Dashboard** | Overview of sales, orders, and inventory metrics |
+| ➕ **Product Management** | Add, edit, delete sweets with images and descriptions |
+| 📋 **Inventory Control** | Real-time stock tracking with low-stock alerts |
+| 👥 **User Management** | View and manage customer accounts |
+| 📈 **Order Management** | Process orders, update status, manage shipments |
+| 🔐 **Role-Based Access** | Restrict features based on user roles |
 
 ---
 
 ## 🛠️ Tech Stack
 
-<table>
-<tr>
-<td valign="top" width="33%">
-
-### Backend
-- **Java 17** - Core language
-- **Spring Boot 3.2.0** - Application framework
-- **Spring Security** - Authentication & authorization
-- **Spring Data MongoDB** - Database integration
-- **JWT (jjwt 0.11.5)** - Token-based auth
+### 🖥️ Backend
+- **Java 17** - Type-safe language
+- **Spring Boot 3.2** - REST API framework
+- **Spring Security** - Authentication & JWT
+- **Spring Data MongoDB** - Database ORM
 - **Maven** - Dependency management
-- **Lombok** - Boilerplate reduction
+- **Lombok** - Reduce boilerplate code
 
-</td>
-<td valign="top" width="33%">
-
-### Frontend
-- **React 18.2** - UI library
-- **TypeScript 5.0** - Type safety
-- **Vite** - Build tool & dev server
-- **React Router v6** - Navigation
+### 🎨 Frontend
+- **React 18** - UI library
+- **TypeScript 5** - Type safety
+- **Vite** - Lightning-fast build tool
+- **React Router v6** - Client-side routing
 - **Axios** - HTTP client
 - **Tailwind CSS** - Utility-first styling
-- **Lucide React** - Modern icons
+- **Lucide React** - Icon library
 
-</td>
-<td valign="top" width="33%">
-
-### Database & Tools
-- **MongoDB 7.0** - NoSQL database
-- **MongoDB Compass** - Database GUI
-- **Postman** - API testing
+### 🗄️ Infrastructure
+- **MongoDB Atlas** - Cloud NoSQL database
+- **Render** - Backend deployment
+- **Vercel** - Frontend hosting
+- **JWT (jjwt)** - Token-based auth
+- **Docker** - Containerization
 - **Git** - Version control
-- **Docker** - Containerization (optional)
-
-</td>
-</tr>
-</table>
 
 ---
 
-## 🎬 Demo
+## 📋 Prerequisites
 
-> **Note:** Add screenshots or GIF demos of your application here
+Before starting, ensure you have:
 
-```
-🚀 Live Demo: https://sweet-shop-management-system-khaki.vercel.app/
-📱 Screenshots: [soon]
-```
-
----
-
-## 📦 Prerequisites
-
-Before you begin, ensure you have the following installed on your system:
-
-### Required Software
-
-<details>
-<summary><b>1. Java Development Kit (JDK) 17+</b></summary>
-
-```bash
-# Check if Java is installed
-java -version
-
-# Expected output: java version "17.x.x" or higher
-```
-
-**Download:** [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) | [OpenJDK](https://adoptium.net/)
-
-</details>
-
-<details>
-<summary><b>2. Node.js 18+ and npm</b></summary>
-
-```bash
-# Check Node.js version
-node -v
-
-# Check npm version
-npm -v
-
-# Expected output: v18.x.x or higher
-```
-
-**Download:** [Node.js Official Website](https://nodejs.org/)
-
-</details>
-
-<details>
-<summary><b>3. MongoDB 7.0+</b></summary>
-
-```bash
-# Check MongoDB version
-mongod --version
-
-# Expected output: db version v7.x.x or higher
-```
-
-**Download:** [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-
-**Alternative:** [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Cloud-hosted, free tier available)
-
-</details>
-
-<details>
-<summary><b>4. Git</b></summary>
-
-```bash
-# Check Git version
-git --version
-
-# Expected output: git version 2.x.x or higher
-```
-
-**Download:** [Git Official Website](https://git-scm.com/downloads)
-
-</details>
-
-<details>
-<summary><b>5. Maven (Optional)</b></summary>
-
-```bash
-# Check Maven version (if installed)
-mvn -v
-```
-
-**Note:** Spring Boot includes Maven Wrapper (mvnw), so Maven installation is optional.
-
-**Download:** [Apache Maven](https://maven.apache.org/download.cgi)
-
-</details>
+| Requirement | Version | Download |
+|------------|---------|----------|
+| **Java JDK** | 17+ | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) \| [OpenJDK](https://openjdk.org/) |
+| **Node.js** | 18+ | [Node.js](https://nodejs.org/) |
+| **MongoDB** | 7.0+ | [Community Server](https://www.mongodb.com/try/download/community) \| [Atlas (Cloud)](https://www.mongodb.com/cloud/atlas) |
+| **Git** | Latest | [Git](https://git-scm.com/) |
 
 ---
 
 ## 🚀 Quick Start
 
-### 📥 Step 1: Clone the Repository
+### 1️⃣ Clone Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/sweet-shop.git
-
-# Navigate to project directory
-cd sweet-shop
+git clone https://github.com/Rakesh-honawad/Sweet-Shop-Management-System.git
+cd Sweet-Shop-Management-System
 ```
 
-### 🗄️ Step 2: Database Setup
-
-#### Start MongoDB
-
-**On Windows:**
-```bash
-net start MongoDB
-```
-
-**On macOS/Linux:**
-```bash
-sudo systemctl start mongod
-
-# Or using Homebrew (macOS)
-brew services start mongodb-community
-```
-
-#### Initialize Database
+### 2️⃣ Backend Setup
 
 ```bash
-# Open MongoDB shell
-mongosh
-
-# Or if using older MongoDB versions
-mongo
-```
-
-**In MongoDB shell, run:**
-
-```javascript
-// Switch to sweetshop database
-use sweetshop
-
-// Create admin user (password: admin123)
-db.users.insertOne({
-  username: "admin",
-  email: "admin@sweetshop.com",
-  password: "$2a$10$slYQmyNdGzin7olVN3p5be4DFH5yYFHwPcKstWx.Ms41WB4.utC3m",
-  role: "ADMIN",
-  createdAt: new Date()
-})
-
-// Add sample sweets data
-db.sweets.insertMany([
-  {
-    name: "Gulab Jamun",
-    description: "Soft and spongy milk-solid balls soaked in sweet syrup",
-    category: "Traditional",
-    price: NumberDecimal("120.00"),
-    imageUrl: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400",
-    stock: 50,
-    createdAt: new Date()
-  },
-  {
-    name: "Kaju Katli",
-    description: "Diamond-shaped cashew fudge with silver leaf",
-    category: "Premium",
-    price: NumberDecimal("450.00"),
-    imageUrl: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=400",
-    stock: 30,
-    createdAt: new Date()
-  },
-  {
-    name: "Rasgulla",
-    description: "Spongy cottage cheese balls in sugar syrup",
-    category: "Traditional",
-    price: NumberDecimal("100.00"),
-    imageUrl: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400",
-    stock: 40,
-    createdAt: new Date()
-  },
-  {
-    name: "Jalebi",
-    description: "Crispy, syrup-soaked spiral-shaped dessert",
-    category: "Traditional",
-    price: NumberDecimal("80.00"),
-    imageUrl: "https://images.unsplash.com/photo-1583158546114-e6a4e8df9b5e?w=400",
-    stock: 60,
-    createdAt: new Date()
-  }
-])
-
-// Exit MongoDB shell
-exit
-```
-
-**Default Admin Credentials:**
-- **Username:** `admin`
-- **Password:** `admin123`
-
-### ⚙️ Step 3: Backend Setup
-
-```bash
-# Navigate to backend directory
 cd backend
-```
 
-#### Configure Application Properties
+# Configure application.properties
+# Update: mongodb.uri, jwt.secret, cors.origins
 
-Create or edit `src/main/resources/application.properties`:
-
-```properties
-# MongoDB Configuration
-spring.data.mongodb.uri=mongodb://localhost:27017/sweetshop
-spring.data.mongodb.database=sweetshop
-
-# Server Configuration
-server.port=8081
-server.error.include-message=always
-
-# JWT Configuration
-jwt.secret=yourSecretKeyHereChangeThisInProductionMinimum256BitsRequired
-jwt.expiration=86400000
-
-# CORS Configuration
-cors.allowed.origins=http://localhost:3000
-
-# Logging
-logging.level.com.sweetshop=DEBUG
-logging.level.org.springframework.security=DEBUG
-```
-
-#### Install Dependencies and Build
-
-**Using Maven Wrapper (Recommended):**
-```bash
-# On Windows
-mvnw.cmd clean install
-
-# On macOS/Linux
+# Build and run
 ./mvnw clean install
-```
-
-**Or using Maven:**
-```bash
-mvn clean install
-```
-
-#### Start Backend Server
-
-```bash
-# Using Maven Wrapper
 ./mvnw spring-boot:run
-
-# Or using Maven
-mvn spring-boot:run
-
-# Or run the JAR file
-java -jar target/sweetshop-backend-1.0.0.jar
 ```
 
-✅ **Backend running at:** http://localhost:8081
+**Backend runs on:** `http://localhost:8080`
 
-### 🎨 Step 4: Frontend Setup
+### 3️⃣ MongoDB Setup
 
-Open a new terminal window:
+#### Option A: Local MongoDB
 
 ```bash
-# Navigate to frontend directory (from project root)
+# Start MongoDB service
+mongod
+
+# Add admin user and sample data via MongoDB Shell or Compass
+```
+
+#### Option B: MongoDB Atlas (Cloud)
+
+1. Go to [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
+2. Create free M0 cluster
+3. Create database user (sweetshop:YourPassword)
+4. Add IP whitelist: `0.0.0.0/0`
+5. Copy connection string
+6. Update in `application.properties`
+
+**Connection String Format:**
+```
+spring.data.mongodb.uri=mongodb+srv://sweetshop:PASSWORD@cluster0.xxxxx.mongodb.net/sweetshop?retryWrites=true&w=majority
+```
+
+### 4️⃣ Frontend Setup
+
+```bash
 cd frontend
-```
 
-#### Install Dependencies
-
-```bash
+# Install dependencies
 npm install
 
-# If you encounter dependency conflicts
-npm install --legacy-peer-deps
-```
-
-#### Configure API Endpoint (Optional)
-
-Edit `src/services/api.ts` if needed:
-
-```typescript
-const API_BASE_URL = 'http://localhost:8081/api';
-```
-
-#### Start Development Server
-
-```bash
+# Start development server
 npm run dev
 ```
 
-✅ **Frontend running at:** http://localhost:3000
+**Frontend runs on:** `http://localhost:5173`
+
+### 5️⃣ Access Application
+
+```
+🏠 Customer Portal: http://localhost:5173
+🔐 Admin Login: http://localhost:5173 (use admin credentials)
+```
 
 ---
 
-## 🎯 Usage
+## 🔑 Default Credentials
 
-### Access the Application
+```
+👤 Admin Account:
+  Username: admin
+  Password: admin123
+  Role: ADMIN
 
-1. **Customer Portal:** http://localhost:3000
-2. **Admin Dashboard:** http://localhost:3000/admin
-
-### Test Accounts
-
-| Role | Username | Password |
-|------|----------|----------|
-| Admin | `admin` | `admin123` |
-| User | Register new account | - |
-
-### Quick Actions
-
-**As Customer:**
-1. Browse the sweet catalog
-2. Add items to cart
-3. Proceed to checkout
-4. View order history
-
-**As Admin:**
-1. Login with admin credentials
-2. Access admin dashboard
-3. Manage products, orders, and users
-4. View analytics and reports
+📝 Or register a new account as customer
+```
 
 ---
 
-## 📡 API Documentation
+## 📁 Project Structure
+
+```
+Sweet-Shop-Management-System/
+│
+├── 📂 backend/                    # Spring Boot Application
+│   ├── src/main/java/com/sweetshop/
+│   │   ├── config/               # Configuration classes
+│   │   │   ├── SecurityConfig.java
+│   │   │   ├── CorsConfig.java
+│   │   │   └── MongoConfig.java
+│   │   ├── controller/           # REST Controllers
+│   │   │   ├── AuthController.java
+│   │   │   ├── SweetController.java
+│   │   │   ├── CartController.java
+│   │   │   └── OrderController.java
+│   │   ├── service/              # Business Logic
+│   │   │   ├── UserService.java
+│   │   │   ├── SweetService.java
+│   │   │   ├── CartService.java
+│   │   │   └── OrderService.java
+│   │   ├── repository/           # Database Queries
+│   │   │   ├── UserRepository.java
+│   │   │   ├── SweetRepository.java
+│   │   │   ├── CartRepository.java
+│   │   │   └── OrderRepository.java
+│   │   ├── model/                # Entity Classes
+│   │   │   ├── User.java
+│   │   │   ├── Sweet.java
+│   │   │   ├── Cart.java
+│   │   │   └── Order.java
+│   │   ├── security/             # JWT & Security
+│   │   │   ├── JwtAuthenticationFilter.java
+│   │   │   └── JwtUtil.java
+│   │   └── SweetShopApplication.java
+│   ├── src/main/resources/
+│   │   └── application.properties # Configuration
+│   ├── pom.xml                   # Maven dependencies
+│   ├── Dockerfile               # Docker container
+│   └── mvnw / mvnw.cmd          # Maven wrapper
+│
+├── 📂 frontend/                   # React Application
+│   ├── src/
+│   │   ├── components/           # Reusable Components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── ProductCard.tsx
+│   │   │   └── CartItem.tsx
+│   │   ├── pages/                # Page Components
+│   │   │   ├── Home.tsx
+│   │   │   ├── Login.tsx
+│   │   │   ├── Products.tsx
+│   │   │   ├── Cart.tsx
+│   │   │   ├── Orders.tsx
+│   │   │   └── admin/
+│   │   │       ├── Dashboard.tsx
+│   │   │       └── ManageProducts.tsx
+│   │   ├── services/             # API Services
+│   │   │   ├── api.ts            # Axios config
+│   │   │   ├── authService.ts
+│   │   │   └── productService.ts
+│   │   ├── context/              # Global State
+│   │   │   └── AuthContext.tsx
+│   │   ├── types/                # TypeScript Interfaces
+│   │   │   ├── user.ts
+│   │   │   ├── product.ts
+│   │   │   └── order.ts
+│   │   ├── App.tsx               # Main component
+│   │   └── main.tsx              # Entry point
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   └── tailwind.config.js
+│
+├── .gitignore
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🔌 API Documentation
 
 ### Base URL
 ```
-http://localhost:8081/api
+http://localhost:8080/api
 ```
 
-### Authentication Endpoints
+### 🔐 Authentication Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `POST` | `/api/auth/register` | Register new user | ❌ No |
-| `POST` | `/api/auth/login` | User login | ❌ No |
-| `GET` | `/api/auth/me` | Get current user | ✅ Yes |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/auth/register` | Register new user |
+| POST | `/auth/login` | User login |
+| GET | `/auth/me` | Get current user info |
 
-#### Example: Register User
-
+**Login Request:**
 ```bash
-curl -X POST http://localhost:8081/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "securePassword123"
-  }'
-```
-
-#### Example: Login
-
-```bash
-curl -X POST http://localhost:8081/api/auth/login \
+curl -X POST http://localhost:8080/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "username": "admin",
@@ -467,7 +306,7 @@ curl -X POST http://localhost:8081/api/auth/login \
   }'
 ```
 
-**Response:**
+**Login Response:**
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -478,395 +317,136 @@ curl -X POST http://localhost:8081/api/auth/login \
 }
 ```
 
-### Sweet/Product Endpoints
+### 🍬 Product Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `GET` | `/api/sweets` | Get all sweets | ❌ No |
-| `GET` | `/api/sweets/{id}` | Get sweet by ID | ❌ No |
-| `GET` | `/api/sweets/category/{category}` | Get sweets by category | ❌ No |
-| `POST` | `/api/sweets` | Create new sweet | ✅ Admin |
-| `PUT` | `/api/sweets/{id}` | Update sweet | ✅ Admin |
-| `DELETE` | `/api/sweets/{id}` | Delete sweet | ✅ Admin |
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| GET | `/sweets` | ❌ | Get all products |
+| GET | `/sweets/{id}` | ❌ | Get product by ID |
+| POST | `/sweets` | ✅ Admin | Create product |
+| PUT | `/sweets/{id}` | ✅ Admin | Update product |
+| DELETE | `/sweets/{id}` | ✅ Admin | Delete product |
 
-#### Example: Get All Sweets
-
+**Get All Products:**
 ```bash
-curl -X GET http://localhost:8081/api/sweets
+curl http://localhost:8080/api/sweets
 ```
 
-#### Example: Create Sweet (Admin)
-
+**Create Product (Admin):**
 ```bash
-curl -X POST http://localhost:8081/api/sweets \
+curl -X POST http://localhost:8080/api/sweets \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{
     "name": "Barfi",
     "description": "Traditional milk-based sweet",
     "category": "Traditional",
     "price": 250.00,
-    "imageUrl": "https://example.com/barfi.jpg",
     "stock": 40
   }'
 ```
 
-### Cart Endpoints
+### 🛒 Cart Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `GET` | `/api/cart` | Get user's cart | ✅ User |
-| `POST` | `/api/cart/add` | Add item to cart | ✅ User |
-| `PUT` | `/api/cart/update/{itemId}` | Update cart item quantity | ✅ User |
-| `DELETE` | `/api/cart/remove/{itemId}` | Remove item from cart | ✅ User |
-| `DELETE` | `/api/cart/clear` | Clear entire cart | ✅ User |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/cart` | Get user cart |
+| POST | `/cart/add` | Add to cart |
+| PUT | `/cart/update/{itemId}` | Update quantity |
+| DELETE | `/cart/remove/{itemId}` | Remove from cart |
 
-#### Example: Add to Cart
+### 📦 Order Endpoints
 
-```bash
-curl -X POST http://localhost:8081/api/cart/add \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{
-    "sweetId": "65a1b2c3d4e5f6g7h8i9j0k1",
-    "quantity": 2
-  }'
-```
-
-### Order Endpoints
-
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| `POST` | `/api/orders` | Create new order | ✅ User |
-| `GET` | `/api/orders/user` | Get user's orders | ✅ User |
-| `GET` | `/api/orders/{id}` | Get order by ID | ✅ User |
-| `GET` | `/api/orders/all` | Get all orders | ✅ Admin |
-| `PUT` | `/api/orders/{id}/status` | Update order status | ✅ Admin |
-
-#### Example: Create Order
-
-```bash
-curl -X POST http://localhost:8081/api/orders \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{
-    "items": [
-      {
-        "sweetId": "65a1b2c3d4e5f6g7h8i9j0k1",
-        "quantity": 2,
-        "price": 120.00
-      }
-    ],
-    "totalAmount": 240.00,
-    "shippingAddress": {
-      "street": "123 Main St",
-      "city": "Mumbai",
-      "state": "Maharashtra",
-      "zipCode": "400001",
-      "country": "India"
-    }
-  }'
-```
-
----
-
-## 📁 Project Structure
-
-```
-sweet-shop/
-│
-├── backend/                          # Spring Boot Backend
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/sweetshop/
-│   │   │   │   ├── config/
-│   │   │   │   │   ├── SecurityConfig.java
-│   │   │   │   │   ├── CorsConfig.java
-│   │   │   │   │   └── MongoConfig.java
-│   │   │   │   ├── controller/
-│   │   │   │   │   ├── AuthController.java
-│   │   │   │   │   ├── SweetController.java
-│   │   │   │   │   ├── CartController.java
-│   │   │   │   │   └── OrderController.java
-│   │   │   │   ├── model/
-│   │   │   │   │   ├── User.java
-│   │   │   │   │   ├── Sweet.java
-│   │   │   │   │   ├── Cart.java
-│   │   │   │   │   └── Order.java
-│   │   │   │   ├── repository/
-│   │   │   │   │   ├── UserRepository.java
-│   │   │   │   │   ├── SweetRepository.java
-│   │   │   │   │   ├── CartRepository.java
-│   │   │   │   │   └── OrderRepository.java
-│   │   │   │   ├── service/
-│   │   │   │   │   ├── UserService.java
-│   │   │   │   │   ├── SweetService.java
-│   │   │   │   │   ├── CartService.java
-│   │   │   │   │   └── OrderService.java
-│   │   │   │   ├── security/
-│   │   │   │   │   ├── JwtAuthenticationFilter.java
-│   │   │   │   │   └── UserDetailsServiceImpl.java
-│   │   │   │   ├── util/
-│   │   │   │   │   └── JwtUtil.java
-│   │   │   │   └── SweetShopApplication.java
-│   │   │   └── resources/
-│   │   │       ├── application.properties
-│   │   │       └── application-prod.properties
-│   │   └── test/
-│   │       └── java/com/sweetshop/
-│   ├── pom.xml
-│   └── mvnw / mvnw.cmd
-│
-├── frontend/                         # React Frontend
-│   ├── public/
-│   │   ├── index.html
-│   │   └── favicon.ico
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── common/
-│   │   │   │   ├── Header.tsx
-│   │   │   │   ├── Footer.tsx
-│   │   │   │   └── Navbar.tsx
-│   │   │   ├── product/
-│   │   │   │   ├── ProductCard.tsx
-│   │   │   │   └── ProductList.tsx
-│   │   │   └── cart/
-│   │   │       └── CartItem.tsx
-│   │   ├── pages/
-│   │   │   ├── Home.tsx
-│   │   │   ├── Login.tsx
-│   │   │   ├── Register.tsx
-│   │   │   ├── Products.tsx
-│   │   │   ├── ProductDetail.tsx
-│   │   │   ├── Cart.tsx
-│   │   │   ├── Checkout.tsx
-│   │   │   ├── Orders.tsx
-│   │   │   └── admin/
-│   │   │       ├── Dashboard.tsx
-│   │   │       ├── ManageProducts.tsx
-│   │   │       ├── ManageOrders.tsx
-│   │   │       └── ManageUsers.tsx
-│   │   ├── services/
-│   │   │   ├── api.ts
-│   │   │   ├── authService.ts
-│   │   │   ├── productService.ts
-│   │   │   ├── cartService.ts
-│   │   │   └── orderService.ts
-│   │   ├── types/
-│   │   │   ├── user.ts
-│   │   │   ├── product.ts
-│   │   │   ├── cart.ts
-│   │   │   └── order.ts
-│   │   ├── context/
-│   │   │   └── AuthContext.tsx
-│   │   ├── hooks/
-│   │   │   └── useAuth.ts
-│   │   ├── utils/
-│   │   │   └── helpers.ts
-│   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   └── index.css
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── vite.config.ts
-│   ├── tailwind.config.js
-│   └── postcss.config.js
-│
-├── .gitignore
-├── README.md
-└── LICENSE
-```
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/orders` | Create order |
+| GET | `/orders/user` | Get user's orders |
+| GET | `/orders/all` | Get all orders (Admin) |
+| PUT | `/orders/{id}/status` | Update status (Admin) |
 
 ---
 
 ## ⚙️ Configuration
 
-### Environment Variables
+### Backend Configuration
 
-For better security and flexibility, use environment variables:
-
-#### Backend `.env` (Optional)
-
-Create `backend/.env`:
+Create/Edit `backend/src/main/resources/application.properties`:
 
 ```properties
-MONGODB_URI=mongodb://localhost:27017/sweetshop
-JWT_SECRET=yourSecretKeyHere
-SERVER_PORT=8081
-CORS_ORIGINS=http://localhost:3000
+# Application Name
+spring.application.name=sweet-shop-backend
+
+# Server Port
+server.port=${PORT:8080}
+
+# MongoDB Connection (Atlas)
+spring.data.mongodb.uri=${MONGODB_URI:mongodb+srv://sweetshop:password@cluster0.xxxxx.mongodb.net/sweetshop?retryWrites=true&w=majority}
+
+# JWT Configuration
+jwt.secret=${JWT_SECRET:your-super-secret-key-minimum-256-bits}
+jwt.expiration=86400000
+
+# CORS Configuration
+cors.allowed.origins=${CORS_ALLOWED_ORIGINS:https://sweet-shop-management-system-khaki.vercel.app,http://localhost:3000}
+
+# Logging
+logging.level.com.sweetshop=DEBUG
+logging.level.org.springframework.security=DEBUG
+
+# JSON Configuration
+spring.jackson.serialization.write-dates-as-timestamps=false
 ```
 
-#### Frontend `.env`
+### Frontend Configuration
 
 Create `frontend/.env`:
 
-```properties
-VITE_API_URL=http://localhost:8081/api
+```env
+VITE_API_URL=http://localhost:8080/api
 VITE_APP_NAME=Sweet Shop
-```
-
-### MongoDB Connection Options
-
-**Local MongoDB:**
-```properties
-spring.data.mongodb.uri=mongodb://localhost:27017/sweetshop
-```
-
-**MongoDB Atlas (Cloud):**
-```properties
-spring.data.mongodb.uri=mongodb+srv://username:password@cluster.mongodb.net/sweetshop?retryWrites=true&w=majority
-```
-
-**MongoDB with Authentication:**
-```properties
-spring.data.mongodb.uri=mongodb://username:password@localhost:27017/sweetshop?authSource=admin
 ```
 
 ---
 
-## 🏗️ Build & Production
+## 🌍 Deployment
 
-### Production Build - Backend
+### 🚀 Deploy Backend (Render)
 
-```bash
-cd backend
+1. Create `Dockerfile` in `backend/`
+2. Push to GitHub
+3. Go to [Render](https://render.com/) → New Web Service
+4. Configure:
+   - **Root Directory:** `backend`
+   - **Dockerfile Path:** `backend/Dockerfile`
+5. Add Environment Variables:
+   ```
+   MONGODB_URI = mongodb+srv://...
+   JWT_SECRET = your-secret
+   CORS_ALLOWED_ORIGINS = your-frontend-url
+   ```
+6. Deploy!
 
-# Create production JAR
-./mvnw clean package -DskipTests
+### 🎨 Deploy Frontend (Vercel)
 
-# The JAR file will be in target/
-ls target/*.jar
-```
+1. Create account on [Vercel](https://vercel.com/)
+2. Import GitHub repo
+3. Configure:
+   - **Root Directory:** `frontend`
+   - **Environment Variable:** `VITE_API_URL = your-backend-url`
+4. Deploy!
 
-### Production Build - Frontend
+### 💾 MongoDB Atlas Setup
 
-```bash
-cd frontend
-
-# Create optimized production build
-npm run build
-
-# The build files will be in dist/
-ls dist/
-```
-
-### Run Production
-
-#### Backend
-```bash
-# Set environment variables
-export MONGODB_URI=mongodb://your-production-db/sweetshop
-export JWT_SECRET=your-production-secret-key
-
-# Run the application
-java -jar target/sweetshop-backend-1.0.0.jar
-```
-
-#### Frontend
-```bash
-# Preview production build locally
-npm run preview
-
-# Or serve with a static server
-npx serve -s dist -l 3000
-```
+1. Create free M0 cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create database user (sweetshop:Password)
+3. Whitelist IP: `0.0.0.0/0` for cloud access
+4. Get connection string and use in backend
 
 ---
 
 ## 🐳 Docker Deployment
 
-### Docker Compose (Recommended)
-
-Create `docker-compose.yml` in project root:
-
-```yaml
-version: '3.8'
-
-services:
-  mongodb:
-    image: mongo:7.0
-    container_name: sweetshop-mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    environment:
-      MONGO_INITDB_DATABASE: sweetshop
-    networks:
-      - sweetshop-network
-
-  backend:
-    build: ./backend
-    container_name: sweetshop-backend
-    ports:
-      - "8081:8081"
-    environment:
-      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/sweetshop
-      - JWT_SECRET=yourProductionSecretKeyHere
-      - CORS_ALLOWED_ORIGINS=http://localhost:3000
-    depends_on:
-      - mongodb
-    networks:
-      - sweetshop-network
-
-  frontend:
-    build: ./frontend
-    container_name: sweetshop-frontend
-    ports:
-      - "3000:3000"
-    environment:
-      - VITE_API_URL=http://localhost:8081/api
-    depends_on:
-      - backend
-    networks:
-      - sweetshop-network
-
-volumes:
-  mongo-data:
-
-networks:
-  sweetshop-network:
-    driver: bridge
-```
-
-### Dockerfiles
-
-**Backend Dockerfile** (`backend/Dockerfile`):
-
-```dockerfile
-FROM maven:3.9-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-FROM eclipse-temurin:17-jre-alpine
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-**Frontend Dockerfile** (`frontend/Dockerfile`):
-
-```dockerfile
-FROM node:18-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/package*.json ./
-RUN npm ci --production
-EXPOSE 3000
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
-```
-
-### Run with Docker
+### Run with Docker Compose
 
 ```bash
 # Build and start all services
@@ -875,296 +455,204 @@ docker-compose up -d
 # View logs
 docker-compose logs -f
 
-# Stop all services
+# Stop services
 docker-compose down
-
-# Stop and remove volumes
-docker-compose down -v
 ```
 
----
+### docker-compose.yml
 
-## 🌐 Deployment Options
+```yaml
+version: '3.8'
 
-### Frontend Deployment
+services:
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: sweetshop
 
-#### Vercel (Recommended)
-```bash
-npm install -g vercel
-cd frontend
-vercel
-```
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/sweetshop
+      - JWT_SECRET=your-secret
+    depends_on:
+      - mongodb
 
-#### Netlify
-```bash
-cd frontend
-npm run build
-# Drag and drop dist/ folder to Netlify
-```
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:8080/api
+    depends_on:
+      - backend
 
-#### AWS S3 + CloudFront
-```bash
-# Build frontend
-npm run build
-
-# Upload to S3
-aws s3 sync dist/ s3://your-bucket-name --delete
-
-# Invalidate CloudFront cache
-aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID --paths "/*"
-```
-
-### Backend Deployment
-
-#### Heroku
-```bash
-# Login to Heroku
-heroku login
-
-# Create app
-heroku create sweetshop-backend
-
-# Add MongoDB addon
-heroku addons:create mongolab
-
-# Deploy
-git push heroku main
-```
-
-#### AWS EC2
-```bash
-# SSH into EC2 instance
-ssh -i your-key.pem ec2-user@your-instance-ip
-
-# Install Java
-sudo yum install java-17-amazon-corretto
-
-# Upload JAR file
-scp -i your-key.pem target/sweetshop-backend-1.0.0.jar ec2-user@your-instance-ip:~/
-
-# Run application
-java -jar sweetshop-backend-1.0.0.jar
-```
-
-#### Railway
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login
-railway login
-
-# Deploy
-railway up
+volumes:
+  mongo-data:
 ```
 
 ---
 
 ## 🐛 Troubleshooting
 
-<details>
-<summary><b>MongoDB Connection Failed</b></summary>
+### ❌ MongoDB Connection Error
 
-**Error:**
-```
-MongoServerError: connect ECONNREFUSED 127.0.0.1:27017
-```
+**Error:** `MongoServerError: connect ECONNREFUSED`
 
 **Solutions:**
-
-1. **Ensure MongoDB is running:**
-   ```bash
-   # Windows
-   net start MongoDB
-   
-   # macOS/Linux
-   sudo systemctl start mongod
-   sudo systemctl status mongod
-   ```
-
-2. **Check MongoDB port:**
-   ```bash
-   netstat -an | grep 27017
-   ```
-
-3. **Verify connection string:**
-   ```properties
-   spring.data.mongodb.uri=mongodb://localhost:27017/sweetshop
-   ```
-
-4. **Check MongoDB logs:**
-   ```bash
-   # macOS/Linux
-   tail -f /usr/local/var/log/mongodb/mongo.log
-   
-   # Windows
-   # Check Event Viewer > Windows Logs > Application
-   ```
-
-</details>
-
-<details>
-<summary><b>Port Already in Use</b></summary>
-
-**Error:**
-```
-Port 8081 is already in use
-```
-
-**Solutions:**
-
-1. **Find and kill the process:**
-   ```bash
-   # Windows
-   netstat -ano | findstr :8081
-   taskkill /PID <PID> /F
-   
-   # macOS/Linux
-   lsof -ti:8081 | xargs kill -9
-   ```
-
-2. **Change the port:**
-   Edit `application.properties`:
-   ```properties
-   server.port=8082
-   ```
-
-</details>
-
-<details>
-<summary><b>CORS Error</b></summary>
-
-**Error:**
-```
-Access to XMLHttpRequest blocked by CORS policy
-```
-
-**Solutions:**
-
-1. **Check CORS configuration:**
-   ```properties
-   cors.allowed.origins=http://localhost:3000
-   ```
-
-2. **Ensure frontend URL matches:**
-   Frontend running on port 3000, backend allows port 3000
-
-3. **Clear browser cache:**
-   - Open DevTools (F12)
-   - Right-click refresh button
-   - Select "Empty Cache and Hard Reload"
-
-</details>
-
-<details>
-<summary><b>JWT Token Expired</b></summary>
-
-**Error:**
-```
-401 Unauthorized - Token expired
-```
-
-**Solution:**
-Login again to get a new token. Tokens expire after 24 hours by default.
-
-</details>
-
-<details>
-<summary><b>npm install fails</b></summary>
-
-**Error:**
-```
-ERESOLVE unable to resolve dependency tree
-```
-
-**Solutions:**
-
-1. **Use legacy peer deps:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
-
-2. **Clear npm cache:**
-   ```bash
-   npm cache clean --force
-   rm -rf node_modules package-lock.json
-   npm install
-   ```
-
-3. **Use correct Node version:**
-   ```bash
-   nvm use 18
-   npm install
-   ```
-
-</details>
-
-<details>
-<summary><b>Build fails - Java version mismatch</b></summary>
-
-**Error:**
-```
-error: invalid source release: 17
-```
-
-**Solution:**
-Ensure you're using JDK 17+:
 ```bash
-java -version
-# If wrong version, update JAVA_HOME
-export JAVA_HOME=/path/to/jdk17
+# Start MongoDB locally
+mongod
+
+# Or use MongoDB Atlas connection string
+# Add to application.properties
+spring.data.mongodb.uri=mongodb+srv://user:pass@cluster.mongodb.net/db
 ```
 
-</details>
+### ❌ CORS Error
 
-<details>
-<summary><b>Frontend not connecting to backend</b></summary>
+**Error:** `Access to XMLHttpRequest blocked by CORS policy`
 
-**Checklist:**
-1. Backend is running on port 8081
-2. Frontend API URL is correct in `api.ts`
-3. CORS is properly configured
-4. Network tab shows requests to correct URL
-5. Check browser console for errors
+**Solution:**
+```properties
+# Update cors.allowed.origins in application.properties
+cors.allowed.origins=https://your-frontend-url.com,http://localhost:3000
+```
 
-</details>
+### ❌ Port Already in Use
+
+**Solution:**
+```bash
+# Kill process using port 8080
+# Windows
+netstat -ano | findstr :8080
+taskkill /PID <PID> /F
+
+# macOS/Linux
+lsof -ti:8080 | xargs kill -9
+```
+
+### ❌ JWT Token Expired
+
+**Solution:** Login again to get a new token (expires after 24 hours)
+
+### ❌ Dockerfile Not Found (Render)
+
+**Solution:** Ensure `backend/Dockerfile` exists and push to GitHub
+
+---
+
+## 📊 Database Schema
+
+### Users Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "username": "admin",
+  "email": "admin@sweetshop.com",
+  "password": "hashed_password",
+  "role": "ADMIN",
+  "createdAt": "Date"
+}
+```
+
+### Sweets Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "name": "Gulab Jamun",
+  "description": "Soft balls in syrup",
+  "category": "Traditional",
+  "price": 120,
+  "imageUrl": "https://...",
+  "stock": 50,
+  "createdAt": "Date"
+}
+```
+
+### Orders Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "userId": "ObjectId",
+  "items": [...],
+  "totalAmount": 500,
+  "status": "PENDING",
+  "orderDate": "Date",
+  "deliveryAddress": {...}
+}
+```
 
 ---
 
 ## 🧪 Testing
 
-### Backend Testing
+### Backend Tests
 
 ```bash
 cd backend
-
-# Run all tests
 ./mvnw test
-
-# Run specific test class
-./mvnw test -Dtest=SweetControllerTest
-
-# Run with coverage
-./mvnw test jacoco:report
 ```
 
-### Frontend Testing
+### Frontend Tests
 
 ```bash
 cd frontend
-
-# Run tests (if configured)
 npm test
-
-# Run with coverage
-npm test -- --coverage
 ```
 
 ---
 
-## 📚 Additional Resources
+## 📚 Learning Resources
 
-- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+- [Spring Boot Docs](https://spring.io/projects/spring-boot)
 - [React Documentation](https://react.dev/)
-- [MongoDB Manual](https://www.mongodb.com/docs/manual/)
+- [MongoDB University](https://university.mongodb.com/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit changes: `git commit -m 'Add AmazingFeature'`
+4. Push to branch: `git push origin feature/AmazingFeature`
+5. Open Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Support
+
+If you found this project helpful, please consider:
+
+- ⭐ Star the repository
+- 🐛 Report issues on [GitHub](https://github.com/Rakesh-honawad/Sweet-Shop-Management-System/issues)
+- 💬 Share feedback
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Rakesh Honawad](https://github.com/Rakesh-honawad)**
+
+Questions? [Open an issue](https://github.com/Rakesh-honawad/Sweet-Shop-Management-System/issues) or start a discussion!
+
+</div>
